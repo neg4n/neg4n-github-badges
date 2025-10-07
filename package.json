@@ -1,5 +1,5 @@
 {
-  "name": "typescript-library-template",
+  "name": "@neg4n/github-badges",
   "version": "0.0.1",
   "description": "A neg4n's template for creating TypeScript libraries",
   "type": "module",
@@ -41,8 +41,7 @@
   },
   "keywords": [
     "typescript",
-    "library",
-    "template"
+    "library"
   ],
   "author": {
     "email": "neg4n@icloud.com",
@@ -51,6 +50,9 @@
   },
   "license": "MIT",
   "packageManager": "pnpm@10.8.0",
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
     "@biomejs/biome": "2.0.4",
