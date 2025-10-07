@@ -1,40 +1,70 @@
 import { describe, expect, it } from 'vitest'
-import { add, greet, multiply } from '../src/index'
+import {
+  BadgeGenerationError,
+  buildGithubLicenseBadge,
+  buildNpmDownloadsBadge,
+  buildStaticBadge,
+  buildTechStackBadge,
+} from '../src/index.js'
 
-describe('greet', () => {
-  it('should return a greeting message', () => {
-    expect(greet('World')).toBe('Hello, World!')
+describe('buildNpmDownloadsBadge', () => {
+  it('builds a badge with default settings', () => {
+    const asset = buildNpmDownloadsBadge({ packageName: 'react' })
+    console.log(asset)
+
+    expect(asset.alt).toBe('Yearly npm downloads for the react library')
+    expect(asset.href).toBe('https://www.npmjs.com/package/react')
+    expect(asset.srcDark).toContain('npm/dy/react')
+    expect(asset.srcLight).toContain('npm/dy/react')
   })
 
-  it('should handle empty string', () => {
-    expect(greet('')).toBe('Hello, !')
+  it('throws when npm period unsupported', () => {
+    expect(() => buildNpmDownloadsBadge({ packageName: 'react', period: 'month' })).toThrow(
+      BadgeGenerationError
+    )
   })
 })
 
-describe('add', () => {
-  it('should add two positive numbers', () => {
-    expect(add(2, 3)).toBe(5)
+describe('buildGithubLicenseBadge', () => {
+  it('composes badge data for a repository', () => {
+    const asset = buildGithubLicenseBadge({ repository: 'foo/bar' })
+    console.log(asset)
+
+    expect(asset.alt).toBe('License information for foo/bar')
+    expect(asset.href).toBe('https://github.com/foo/bar/blob/HEAD/LICENSE')
+    expect(new URL(asset.srcDark).pathname).toBe('/github/license/foo/bar')
   })
 
-  it('should add negative numbers', () => {
-    expect(add(-1, -2)).toBe(-3)
-  })
-
-  it('should add zero', () => {
-    expect(add(5, 0)).toBe(5)
+  it('throws for missing repository value', () => {
+    expect(() => buildGithubLicenseBadge({ repository: ' ' })).toThrow(BadgeGenerationError)
   })
 })
 
-describe('multiply', () => {
-  it('should multiply two positive numbers', () => {
-    expect(multiply(3, 4)).toBe(12)
+describe('buildStaticBadge', () => {
+  it('builds a badge from label and message', () => {
+    const asset = buildStaticBadge({ label: 'tests', message: 'passing' })
+    console.log(asset)
+
+    expect(asset.alt).toBe('tests: passing')
+    expect(asset.href).toBe('#')
+    expect(asset.srcDark).toContain('badge/tests')
   })
 
-  it('should multiply by zero', () => {
-    expect(multiply(5, 0)).toBe(0)
+  it('throws when label missing', () => {
+    expect(() => buildStaticBadge({ label: ' ' })).toThrow(BadgeGenerationError)
+  })
+})
+
+describe('buildTechStackBadge', () => {
+  it('defaults message to the technology name', () => {
+    const asset = buildTechStackBadge({ name: 'Astro' })
+
+    expect(asset.alt).toBe('Astro in the tech stack')
+    expect(asset.href).toContain('google.com/search')
+    expect(asset.srcLight).toContain('badge/stack-Astro')
   })
 
-  it('should multiply negative numbers', () => {
-    expect(multiply(-2, 3)).toBe(-6)
+  it('throws for missing tech name', () => {
+    expect(() => buildTechStackBadge({ name: ' ' })).toThrow(BadgeGenerationError)
   })
 })
