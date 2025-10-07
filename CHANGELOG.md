@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/neg4n/neg4n-github-badges/compare/v1.0.0...v1.0.1) (2025-10-07)
+
+
+### Bug Fixes
+
+* change package name ([7fac6ec](https://github.com/neg4n/neg4n-github-badges/commit/7fac6ece4f5b962e0b1a16ce6bb01ad523335483))
+
 # 1.0.0 (2025-10-07)
 
 
