@@ -1,6 +1,6 @@
 {
   "name": "@neg4n/github-badges",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A neg4n's template for creating TypeScript libraries",
   "type": "module",
   "main": "./dist/index.cjs",
