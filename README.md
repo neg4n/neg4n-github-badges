@@ -7,17 +7,17 @@ Badge Data & Shields URL Builders is a small, typed helper I use across my perso
 Install it with your package manager of choice:
 
 ```bash
-pnpm add @neg4n/github-badges
+pnpm add @igorklepacki/github-badges
 # or
-npm install @neg4n/github-badges
+npm install @igorklepacki/github-badges
 # or
-yarn add @neg4n/github-badges
+yarn add @igorklepacki/github-badges
 ```
 
 Create a badge by importing one of the builders. Each builder returns a `BadgeAsset` with alt text, href, and dark/light image sources ready to drop into documentation.
 
 ```ts
-import { buildNpmDownloadsBadge } from "@neg4n/github-badges"
+import { buildNpmDownloadsBadge } from "@igorklepacki/github-badges"
 
 const downloads = buildNpmDownloadsBadge({
   packageName: "react",
