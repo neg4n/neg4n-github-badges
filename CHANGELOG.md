@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/neg4n/neg4n-github-badges/compare/v1.0.2...v1.0.3) (2025-10-10)
+
+
+### Bug Fixes
+
+* trigger release ([2ddd614](https://github.com/neg4n/neg4n-github-badges/commit/2ddd6142f55d850d00beb16fefdcca35d95b933a))
+
 ## [1.0.2](https://github.com/neg4n/neg4n-github-badges/compare/v1.0.1...v1.0.2) (2025-10-10)
 
 
