@@ -2,6 +2,7 @@
 
 Badge Data & Shields URL Builders is a small, typed helper I use across my personal projects to generate themed Shields.io badge assets for Markdown or HTML embeds.
 
+
 ## Usage
 
 Install it with your package manager of choice:
