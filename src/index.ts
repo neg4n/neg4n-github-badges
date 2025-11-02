@@ -1,5 +1,6 @@
 export { BadgeGenerationError } from './errors.js'
 export type { BadgeAsset } from './types.js'
+export { availableVariantsMap } from './variants/available-variants-map.js'
 export type {
   GithubLicenseBadgeOptions,
   NpmDownloadsBadgeOptions,
