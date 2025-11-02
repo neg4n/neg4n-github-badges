@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/neg4n/neg4n-github-badges/compare/v1.0.3...v1.1.0) (2025-11-02)
+
+
+### Features
+
+* add available variants map ([2711844](https://github.com/neg4n/neg4n-github-badges/commit/2711844d285c95b4472a78aada55722440667d52))
+
 ## [1.0.3](https://github.com/neg4n/neg4n-github-badges/compare/v1.0.2...v1.0.3) (2025-10-10)
 
 
